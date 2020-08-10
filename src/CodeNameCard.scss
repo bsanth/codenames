@@ -1,0 +1,21 @@
+.card {
+  min-height: 100px;
+  border: 1px dashed #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+}
+
+.red {
+  color: #E53935;
+}
+
+.blue {
+  color: #2979FF;
+}
+
+.skull {
+  background: #616161;
+  color: #FFFFFF;
+}
