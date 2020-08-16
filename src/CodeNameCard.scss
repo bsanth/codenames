@@ -1,6 +1,7 @@
 .card {
   min-height: 100px;
-  border: 1px dashed #000000;
+  border: 1px solid #888;
+  border-radius: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,4 +19,8 @@
 .skull {
   background: #616161;
   color: #FFFFFF;
+}
+
+.selected {
+  background: #FFECB3;
 }
