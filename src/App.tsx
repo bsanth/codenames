@@ -34,6 +34,7 @@ class App extends Component<any, stateType> {
     }
 
     componentDidMount() {
+        console.log(window.location.hash);
         let encryptedBoardData = window.location.hash;
         if (encryptedBoardData != null && encryptedBoardData.length > 2) {
             encryptedBoardData = window.atob(encryptedBoardData.substr(1));
@@ -104,6 +105,7 @@ class App extends Component<any, stateType> {
 
         const encryptedString = this.encrypt(wordIndices, redWordIndices, blueWordIndices, skullWordIndex);
         window.location.assign(`#${encryptedString}`);
+        window.location.reload();
     }
 
     isIntersect(arrays: number[][]): number {
