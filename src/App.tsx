@@ -34,7 +34,7 @@ class App extends Component<any, stateType> {
     }
 
     componentDidMount() {
-        let encryptedBoardData = window.location.pathname;
+        let encryptedBoardData = window.location.hash;
         if (encryptedBoardData != null && encryptedBoardData.length > 2) {
             encryptedBoardData = window.atob(encryptedBoardData.substr(1));
         }
@@ -103,7 +103,7 @@ class App extends Component<any, stateType> {
         const skullWordIndex = this.makeSkullWord(shuffled25);
 
         const encryptedString = this.encrypt(wordIndices, redWordIndices, blueWordIndices, skullWordIndex);
-        window.location.assign(`/${encryptedString}`);
+        window.location.assign(`#${encryptedString}`);
     }
 
     isIntersect(arrays: number[][]): number {
@@ -177,12 +177,14 @@ class App extends Component<any, stateType> {
                 <h1>Codenames</h1>
                 <div>
                     <button onClick={() => this.generateNewBoard()}>Generate new board</button>
-                    <button onClick={() => { navigator.clipboard.writeText(window.location.href); alert('URL copied to clipboard. Share with friends!');}}>
-                        Copy URL to share this game
-                    </button>
                 </div>
                 {
                     this.state.wordIndices.length === 25 && <div className="game-container">
+                        <div>
+                            <button onClick={() => { navigator.clipboard.writeText(window.location.href); alert('URL copied to clipboard. Share with friends!');}}>
+                                Copy URL to share this game
+                            </button>
+                        </div>
                         <div className="actions-container">
                             <div className="left">
                                 <span className='blue-count'>
