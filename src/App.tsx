@@ -183,9 +183,7 @@ class App extends Component<any, stateType> {
                 {
                     this.state.wordIndices.length === 25 && <div className="game-container">
                         <div>
-                            <button onClick={() => { navigator.clipboard.writeText(window.location.href); alert('URL copied to clipboard. Share with friends!');}}>
-                                Copy URL to share this game
-                            </button>
+                            Copy URL to share this game: <a href={window.location.href}>shareable link</a>
                         </div>
                         <div className="actions-container">
                             <div className="left">
